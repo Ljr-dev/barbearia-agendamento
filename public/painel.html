@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Painel | BarberPrime</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<main class="dashboard">
+
+  <aside class="sidebar">
+    <a href="index.html" class="brand sidebar-brand">
+      <span class="brand-icon">✂</span>
+      <div>
+        <strong>BARBER<span>PRIME</span></strong>
+        <small>BARBEARIA PREMIUM</small>
+      </div>
+    </a>
+
+    <div class="owner-card">
+      <div class="owner-avatar">👤</div>
+      <div>
+        <strong>Dono da Barbearia</strong>
+        <small>admin@barberprime.com</small>
+      </div>
+    </div>
+
+    <nav class="sidebar-menu">
+      <a class="active" href="#dashboard">▣ Dashboard</a>
+      <a href="#agendamentos">📅 Agendamentos</a>
+      <a href="#barbeiros">👤 Barbeiros</a>
+      <a href="#servicos">✂ Serviços</a>
+      <a href="index.html">🌐 Ver site</a>
+    </nav>
+
+    <button class="logout" onclick="logout()">↳ Sair</button>
+  </aside>
+
+  <section class="dashboard-content">
+
+    <section id="loginBox" class="login-screen">
+      <div class="login-card">
+        <h1>Login do dono</h1>
+        <p>Acesse o painel profissional da barbearia.</p>
+
+        <form id="formLogin">
+          <input type="email" id="email" placeholder="E-mail" required />
+          <input type="password" id="senha" placeholder="Senha" required />
+          <button class="btn btn-full" type="submit">Entrar no painel</button>
+        </form>
+
+        <small>Login inicial: admin@barbearia.com / 123456</small>
+      </div>
+    </section>
+
+    <section id="painelBox" class="painel-area oculto">
+      <div class="dash-title">
+        <div>
+          <h1>Dashboard</h1>
+          <p>Visão geral do seu negócio</p>
+        </div>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <small>Agendamentos hoje</small>
+          <strong id="statHoje">0</strong>
+          <span>Agenda do dia atual</span>
+        </div>
+
+        <div class="stat-card">
+          <small>Agendamentos amanhã</small>
+          <strong id="statAmanha">0</strong>
+          <span>Próximo dia de trabalho</span>
+        </div>
+
+        <div class="stat-card">
+          <small>Total esta semana</small>
+          <strong id="statSemana">0</strong>
+          <span>Próximos 7 dias</span>
+        </div>
+
+        <div class="stat-card">
+          <small>Cancelados</small>
+          <strong id="statCancelados">0</strong>
+          <span>Agendamentos cancelados</span>
+        </div>
+      </div>
+
+      <div class="dashboard-grid">
+        <section id="agendamentos" class="panel-card big">
+          <h2>Agendamentos próximos</h2>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Data</th>
+                  <th>Horário</th>
+                  <th>Cliente</th>
+                  <th>Barbeiro</th>
+                  <th>Serviço</th>
+                  <th>Status</th>
+                  <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody id="listaAgendamentos"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <aside class="right-column">
+          <section class="panel-card">
+            <h2>Ações rápidas</h2>
+
+            <div class="quick-actions">
+              <button onclick="document.getElementById('nomeBarbeiro').focus()">👤 Novo barbeiro</button>
+              <button onclick="document.getElementById('nomeServico').focus()">✂ Novo serviço</button>
+              <button onclick="carregarAgendamentos()">↻ Atualizar</button>
+            </div>
+          </section>
+
+          <section id="barbeiros" class="panel-card">
+            <h2>Barbeiros</h2>
+
+            <form id="formBarbeiro" class="mini-form">
+              <input type="text" id="nomeBarbeiro" placeholder="Nome do barbeiro" required />
+              <button type="submit">Cadastrar</button>
+            </form>
+
+            <ul id="listaBarbeiros" class="admin-list"></ul>
+          </section>
+
+          <section id="servicos" class="panel-card">
+            <h2>Serviços</h2>
+
+            <form id="formServico" class="mini-form">
+              <input type="text" id="nomeServico" placeholder="Nome do serviço" required />
+              <input type="number" id="precoServico" placeholder="Preço" required />
+              <input type="number" id="duracaoServico" placeholder="Duração" value="30" required />
+              <button type="submit">Cadastrar</button>
+            </form>
+
+            <ul id="listaServicos" class="admin-list"></ul>
+          </section>
+        </aside>
+      </div>
+    </section>
+
+  </section>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>

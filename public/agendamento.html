@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agendar Horário | BarberPrime</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="topbar">
+  <a href="index.html" class="brand">
+    <span class="brand-icon">✂</span>
+    <div>
+      <strong>BARBER<span>PRIME</span></strong>
+      <small>BARBEARIA PREMIUM</small>
+    </div>
+  </a>
+
+  <nav class="menu">
+    <a href="index.html">Início</a>
+    <a class="active" href="agendamento.html">Agendar</a>
+    <a href="painel.html">Painel</a>
+  </nav>
+
+  <a class="btn btn-small btn-outline" href="painel.html">📅 Painel do profissional</a>
+</header>
+
+<main class="booking-page">
+  <section class="booking-left">
+    <p class="eyebrow">AGENDAMENTO ONLINE</p>
+    <h1>Agende seu horário</h1>
+    <p>
+      Escolha o barbeiro, serviço, data e horário disponíveis para você.
+    </p>
+
+    <div class="benefits">
+      <div>
+        <span>▣</span>
+        <strong>Rápido e fácil</strong>
+        <small>Agende em poucos cliques</small>
+      </div>
+
+      <div>
+        <span>◷</span>
+        <strong>Horários reais</strong>
+        <small>Veja apenas horários disponíveis</small>
+      </div>
+
+      <div>
+        <span>✓</span>
+        <strong>Confirmação imediata</strong>
+        <small>Seu horário é reservado na hora</small>
+      </div>
+    </div>
+
+    <a class="whatsapp-card" href="https://wa.me/5511999999999" target="_blank">
+      <span>☏</span>
+      <div>
+        <strong>Fale conosco no WhatsApp</strong>
+        <small>(11) 99999-9999</small>
+      </div>
+      <b>→</b>
+    </a>
+  </section>
+
+  <section class="booking-card">
+    <h2>Informe seus dados e escolha o horário</h2>
+
+    <form id="formAgendamento" class="booking-form">
+      <div class="form-grid-2">
+        <label>
+          <span>♙</span>
+          <input type="text" id="cliente" placeholder="Seu nome" required />
+        </label>
+
+        <label>
+          <span>☏</span>
+          <input type="tel" id="telefone" placeholder="WhatsApp" required />
+        </label>
+      </div>
+
+      <label>
+        <span>♙</span>
+        <select id="barbeiro" required>
+          <option value="">Escolha o barbeiro</option>
+        </select>
+      </label>
+
+      <label>
+        <span>✂</span>
+        <select id="servico" required>
+          <option value="">Escolha o serviço</option>
+        </select>
+      </label>
+
+      <div class="form-grid-2">
+        <label>
+          <span>▣</span>
+          <select id="data" required>
+            <option value="">Escolha o dia</option>
+          </select>
+        </label>
+
+        <label>
+          <span>◷</span>
+          <select id="horario" required>
+            <option value="">Escolha o horário</option>
+          </select>
+        </label>
+      </div>
+
+      <button class="btn btn-full" type="submit">📅 Confirmar agendamento</button>
+
+      <p class="secure">🔒 Seus dados estão seguros conosco.</p>
+    </form>
+  </section>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
